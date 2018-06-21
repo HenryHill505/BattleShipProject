@@ -10,13 +10,13 @@ namespace BattleShip
     {
         public int height;
         public int width;
-        public bool[,] shotResults;
+        public int[,] shotResults;
 
         public Board(int height, int width)
         {
             this.height = height;
             this.width = width;
-            this.shotResults = new bool[height, width];
+            this.shotResults = new int[height, width];
         }
 
         public void DisplayToOwner() {
@@ -39,14 +39,14 @@ namespace BattleShip
                 {
                     switch (shotResults[i, j])
                     {
-                        case true:
+                        case 0:
+                            Console.Write(" ~");
+                            break;
+                        case 1:
                             Console.Write(" x");
                             break;
-                        case false:
-                            Console.Write(" o");
-                            break;
-                        default:
-                            Console.Write(" ~");
+                        case -1:
+                            Console.Write(" 0");
                             break;
                     }
                     
