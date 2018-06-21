@@ -8,5 +8,7 @@ namespace BattleShip
 {
     class Player
     {
+        public string name;
+
     }
 }
