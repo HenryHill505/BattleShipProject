@@ -12,6 +12,8 @@ namespace BattleShip
         {
             Board gameBoard = new Board(20,20);
             gameBoard.DisplayToOwner();
+            Console.ReadLine();
+            gameBoard.DisplayToOpponent();
 
         }
     }
