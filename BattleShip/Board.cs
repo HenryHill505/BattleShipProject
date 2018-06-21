@@ -49,7 +49,6 @@ namespace BattleShip
                             Console.Write(" 0");
                             break;
                     }
-                    
                 }
                 Console.WriteLine("");
             }
