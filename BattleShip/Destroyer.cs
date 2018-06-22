@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleShip
 {
-    class Destroyer : Ship
+    public class Destroyer : Ship
     {
         public Destroyer()
         {
