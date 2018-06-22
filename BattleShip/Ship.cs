@@ -77,6 +77,10 @@ namespace BattleShip
                         horizontalCoordinates[i] = sternHorizontalCoordinate + i;
                     }
                     break;
+                default:
+                    Console.WriteLine("Not a valid direction. Re-enter placement");
+                    PlaceShip(heightBoundary, widthBoundary);
+                    break;
             }
 
             foreach (int coordinate in verticalCoordinates)
