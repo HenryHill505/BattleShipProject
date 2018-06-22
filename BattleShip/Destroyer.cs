@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace BattleShip
 {
-    public abstract class Ship
+    class Destroyer : Ship
     {
-       public string type;
-       public int hitSpaces;
-
-        public Ship()
+        public Destroyer()
         {
+            this.type = "Destroyer";
+            this.hitSpaces = 2;
         }
     }
 }

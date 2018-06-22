@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace BattleShip
 {
-    public abstract class Ship
+    public class AircraftCarrier : Ship
     {
-       public string type;
-       public int hitSpaces;
 
-        public Ship()
+        public AircraftCarrier()
         {
+            type = "Aircraft Carrier";
+            int hitSpaces = 5;
         }
     }
 }
