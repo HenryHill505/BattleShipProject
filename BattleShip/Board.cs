@@ -157,7 +157,7 @@ namespace BattleShip
             {
                 if (placedShip.IsSpaceOcuppied(verticalCoordinate,horizontalCoordinate))
                 {
-                    Console.WriteLine($"{placedShip.type} is hit!");
+                    Console.WriteLine($"{placedShip.type} is hit!");    
                 }
                 else
                 {

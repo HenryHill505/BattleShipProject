@@ -9,6 +9,20 @@ namespace BattleShip
     class Player
     {
         public string name;
+        public Board board;
 
+        public Player()
+        {
+            this.board = new Board(20,20);
+        }
+
+        public void Shoot(Player targetPlayer)
+        {
+            Console.WriteLine("Enter the x coordinate for your shot");
+            int horizontalCoordinate = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the y coordinate for your shot");
+            int verticalCoordinate = int.Parse(Console.ReadLine());
+            targetPlayer.board.ReceiveShot(verticalCoordinate, horizontalCoordinate);
+        }
     }
 }
