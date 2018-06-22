@@ -78,5 +78,16 @@ namespace BattleShip
             }
             Console.ReadLine();
         }
+
+        public virtual bool IsSpaceOcuppied(int verticalCoordinate, int horizontalCoordinate)
+        {
+            if ((Array.IndexOf(verticalCoordinates,verticalCoordinate) != -1) && (Array.IndexOf(horizontalCoordinates, horizontalCoordinate) != -1)){
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
