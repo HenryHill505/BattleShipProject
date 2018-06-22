@@ -11,10 +11,7 @@ namespace BattleShip
         static void Main(string[] args)
         {
             Board board = new Board(20, 20);
-            board.destroyer.PlaceShip();
-            board.submarine.PlaceShip();
-            board.battleship.PlaceShip();
-            board.aircraftCarrier.PlaceShip();
+            board.PlaceShips();
             board.DisplayToOwner();
         }
     }

@@ -78,6 +78,14 @@ namespace BattleShip
             Console.ReadLine();
         }
 
+        public void PlaceShips()
+        {
+            destroyer.PlaceShip();
+            submarine.PlaceShip();
+            battleship.PlaceShip();
+            aircraftCarrier.PlaceShip();
+        }
+
         public void WriteTopGridNumbers()
         {
             for (int i = 0; i < 11; i++)
