@@ -20,12 +20,23 @@ namespace BattleShip
         }
 
         public void DisplayToOwner() {
+            for (int i = 0; i<11; i++)
+            {
+                Console.Write(" |" + i);
+            }
+            for (int i = 11; i < width; i++)
+            {
+                Console.Write("|" + i);
+            }
+            Console.WriteLine(" ");
             for (int i = 0; i<height; i++)
             {
+                
                 for (int j = 0; j<width; j++)
                 {
-                    Console.Write(" ~");
+                    Console.Write(" |~");
                 }
+                Console.Write("  " + i);
                 Console.WriteLine("");
             }
             Console.ReadLine();
