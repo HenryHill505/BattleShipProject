@@ -11,7 +11,8 @@ namespace BattleShip
         public int height;
         public int width;
         public int[,] shotResults;
-        public Ship[] ships;
+        public Ship[] unplacedShips;
+        public List<Ship> placedShips;
         public Destroyer destroyer;
         public Submarine submarine;
         public Battleship battleship;
@@ -26,13 +27,22 @@ namespace BattleShip
             this.submarine = new Submarine();
             this.battleship = new Battleship();
             this.aircraftCarrier = new AircraftCarrier();
-            ships = new Ship[] { destroyer, submarine, battleship, aircraftCarrier };
+            this.unplacedShips = new Ship[] { destroyer, submarine, battleship, aircraftCarrier };
+            this.placedShips = new List<Ship>();
         }
 
         public string DecideGridCharacter(int verticalPosition, int horizontalPosition)
         {
             try
-            {
+            {   
+                foreach(Ship placedShip in placedShips)
+                {
+                    if (placedShip.IsSpaceOcuppied(verticalPosition, horizontalPosition))
+                    {
+                        return " |o";
+                    }
+                }
+                return " |~";
                 if (destroyer.IsSpaceOcuppied(verticalPosition, horizontalPosition) || submarine.IsSpaceOcuppied(verticalPosition, horizontalPosition) || battleship.IsSpaceOcuppied(verticalPosition, horizontalPosition) || aircraftCarrier.IsSpaceOcuppied(verticalPosition, horizontalPosition))
                 {
                     return " |o";
@@ -89,11 +99,56 @@ namespace BattleShip
 
         public void PlaceShips()
         {   
-            foreach (Ship boat in ships){
-                DisplayToOwner();
-                boat.PlaceShip(height, width);
+            foreach (Ship unplacedShip in unplacedShips){
+                do
+                {
+                    DisplayToOwner();
+                    unplacedShip.PlaceShip(height, width);
+ 
+                } while (isShipPlacementInvalid(unplacedShip));
+                placedShips.Add(unplacedShip);
             }
-           
+        }
+
+        public bool isShipPlacementInvalid(Ship ship)
+        {
+            for (int i = 0; i < ship.verticalCoordinates.Count(); i++)
+            {
+                for (int j = 0; j < ship.horizontalCoordinates.Count(); j++)
+                {
+                    //Console.WriteLine("That space is already occupied");
+                    if (isSpaceOccupied(ship.verticalCoordinates[i], ship.horizontalCoordinates[j]))
+                    {
+                        Console.WriteLine($"That space is already occupied. Pick another space for {ship.type}");
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool isSpaceOccupied(int verticalCoordinate, int horizontalCoordinate)
+        {
+            try
+            {
+                foreach (Ship placedShip in placedShips)
+                {
+                    if (placedShip.IsSpaceOcuppied(verticalCoordinate, horizontalCoordinate))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                return false;
+            }
+
+            catch
+            {
+                return false;
+            }
         }
 
         public void WriteTopGridNumbers()
