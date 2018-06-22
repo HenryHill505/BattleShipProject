@@ -88,13 +88,12 @@ namespace BattleShip
         }
 
         public void PlaceShips()
-        {
-            DisplayToOwner();
-
-            destroyer.PlaceShip();
-            submarine.PlaceShip();
-            battleship.PlaceShip();
-            aircraftCarrier.PlaceShip();
+        {   
+            foreach (Ship boat in ships){
+                DisplayToOwner();
+                boat.PlaceShip();
+            }
+           
         }
 
         public void WriteTopGridNumbers()
