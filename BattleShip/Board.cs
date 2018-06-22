@@ -151,6 +151,21 @@ namespace BattleShip
             }
         }
 
+        public void ReceiveShot(int verticalCoordinate, int horizontalCoordinate)
+        {
+            foreach (Ship placedShip in placedShips)
+            {
+                if (placedShip.IsSpaceOcuppied(verticalCoordinate,horizontalCoordinate))
+                {
+                    Console.WriteLine($"{placedShip.type} is hit!");
+                }
+                else
+                {
+                    Console.WriteLine("Your shot misses");
+                }
+            }
+        }
+
         public void WriteTopGridNumbers()
         {
             for (int i = 0; i < 11; i++)
