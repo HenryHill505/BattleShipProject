@@ -11,8 +11,8 @@ namespace BattleShip
 
         public AircraftCarrier()
         {
-            type = "Aircraft Carrier";
-            int hitSpaces = 5;
+            this.type = "Aircraft Carrier";
+            this.hitSpaces = 5;
         }
     }
 }

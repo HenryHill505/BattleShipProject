@@ -19,7 +19,7 @@ namespace BattleShip
 
         public virtual void PlaceShip()
         {
-            Console.WriteLine("Pick the x coordinate for the Ship's stern");
+            Console.WriteLine("Pick the y coordinate for the Ship's stern");
             int sternVerticalCoordinate = int.Parse(Console.ReadLine());
             Console.WriteLine("Pick the x coordinate for the ship's stern");
             int sternHorizontalCoordinate = int.Parse(Console.ReadLine());
@@ -65,6 +65,18 @@ namespace BattleShip
                     }
                     break;
             }
+            Console.WriteLine("Vertical Coordinates: ");
+            foreach (int coordinate in verticalCoordinates)
+            {
+                Console.WriteLine($"{coordinate}, ");
+            }
+
+            Console.WriteLine("Horizontal Coordinates: ");
+            foreach (int coordinate in horizontalCoordinates)
+            {
+                Console.WriteLine($"{coordinate}, ");
+            }
+            Console.ReadLine();
         }
     }
 }

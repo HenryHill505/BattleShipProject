@@ -15,6 +15,10 @@ namespace BattleShip
             Console.ReadLine();
             gameBoard.DisplayToOpponent();
 
+            AircraftCarrier carrier = new AircraftCarrier();
+            carrier.PlaceShip();
+
+
         }
     }
 }

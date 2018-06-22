@@ -10,8 +10,8 @@ namespace BattleShip
     {
         public Battleship()
         {
-            type = "Battleship";
-            hitSpaces = 4;
+            this.type = "Battleship";
+            this.hitSpaces = 4;
         }
     }
 }
