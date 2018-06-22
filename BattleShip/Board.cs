@@ -29,7 +29,14 @@ namespace BattleShip
 
         public string DecideGridCharacter(int verticalPosition, int horizontalPosition)
         {
-
+            if (destroyer.IsSpaceOcuppied(verticalPosition, horizontalPosition) || submarine.IsSpaceOcuppied(verticalPosition, horizontalPosition) || battleship.IsSpaceOcuppied(verticalPosition, horizontalPosition) || aircraftCarrier.IsSpaceOcuppied(verticalPosition, horizontalPosition))
+            {
+                return " |o";
+            }
+            else
+            {
+                return " |~";
+            }
         }
 
         public void DisplayToOwner() {
@@ -39,7 +46,7 @@ namespace BattleShip
             {                
                 for (int j = 0; j<width; j++)
                 {
-                    Console.Write(" |~");
+                    Console.Write(DecideGridCharacter(i,j));
                 }
                 Console.Write(" |" + i);
                 Console.WriteLine("");

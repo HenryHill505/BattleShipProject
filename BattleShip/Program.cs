@@ -10,15 +10,12 @@ namespace BattleShip
     {
         static void Main(string[] args)
         {
-            Board gameBoard = new Board(20,20);
-            gameBoard.DisplayToOwner();
-            Console.ReadLine();
-            gameBoard.DisplayToOpponent();
-
-            AircraftCarrier carrier = new AircraftCarrier();
-            carrier.PlaceShip();
-
-
+            Board board = new Board(20, 20);
+            board.destroyer.PlaceShip();
+            board.submarine.PlaceShip();
+            board.battleship.PlaceShip();
+            board.aircraftCarrier.PlaceShip();
+            board.DisplayToOwner();
         }
     }
 }
