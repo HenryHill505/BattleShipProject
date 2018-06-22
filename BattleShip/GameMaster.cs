@@ -33,6 +33,14 @@ namespace BattleShip
         {
             NamePlayers();
             SetPieces();
+            RunRound();
         }
+
+        public void RunRound()
+        {
+            player1.Shoot(player2);
+            player2.Shoot(player1);
+        }
+
     }
 }
