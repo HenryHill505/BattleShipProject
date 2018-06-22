@@ -91,7 +91,7 @@ namespace BattleShip
         {   
             foreach (Ship boat in ships){
                 DisplayToOwner();
-                boat.PlaceShip();
+                boat.PlaceShip(height, width);
             }
            
         }

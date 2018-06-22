@@ -17,12 +17,12 @@ namespace BattleShip
         {
         }
 
-        public virtual void PlaceShip()
+        public virtual void PlaceShip(int heightBoundary, int widthBoundary)
         {
-            Console.WriteLine($"Pick the y coordinate for the {type}'s stern");
-            int sternVerticalCoordinate = int.Parse(Console.ReadLine());
             Console.WriteLine($"Pick the x coordinate for the {type}'s stern");
             int sternHorizontalCoordinate = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Pick the y coordinate for the {type}'s stern");
+            int sternVerticalCoordinate = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Is the ship pointed up, down, left, or right");
             string shipDirection = Console.ReadLine();
@@ -65,16 +65,24 @@ namespace BattleShip
                     }
                     break;
             }
-            Console.WriteLine("Vertical Coordinates: ");
+
             foreach (int coordinate in verticalCoordinates)
             {
-                Console.WriteLine($"{coordinate}, ");
+                if (coordinate > heightBoundary || coordinate < 0)
+                {
+                    Console.WriteLine($"{type} is out of bounds. Place again: ");
+                    PlaceShip(heightBoundary, widthBoundary);
+                }
+                    
             }
 
-            Console.WriteLine("Horizontal Coordinates: ");
             foreach (int coordinate in horizontalCoordinates)
             {
-                Console.WriteLine($"{coordinate}, ");
+                if (coordinate > widthBoundary || coordinate < 0)
+                {
+                    Console.WriteLine($"{type} is out of bounds. Place again: ");
+                    PlaceShip(heightBoundary, widthBoundary);
+                }
             }
             Console.ReadLine();
         }
