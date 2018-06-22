@@ -11,6 +11,7 @@ namespace BattleShip
         public int height;
         public int width;
         public int[,] shotResults;
+        public Ship[] ships;
         public Destroyer destroyer;
         public Submarine submarine;
         public Battleship battleship;
@@ -25,15 +26,23 @@ namespace BattleShip
             this.submarine = new Submarine();
             this.battleship = new Battleship();
             this.aircraftCarrier = new AircraftCarrier();
+            ships = new Ship[] { destroyer, submarine, battleship, aircraftCarrier };
         }
 
         public string DecideGridCharacter(int verticalPosition, int horizontalPosition)
         {
-            if (destroyer.IsSpaceOcuppied(verticalPosition, horizontalPosition) || submarine.IsSpaceOcuppied(verticalPosition, horizontalPosition) || battleship.IsSpaceOcuppied(verticalPosition, horizontalPosition) || aircraftCarrier.IsSpaceOcuppied(verticalPosition, horizontalPosition))
+            try
             {
-                return " |o";
+                if (destroyer.IsSpaceOcuppied(verticalPosition, horizontalPosition) || submarine.IsSpaceOcuppied(verticalPosition, horizontalPosition) || battleship.IsSpaceOcuppied(verticalPosition, horizontalPosition) || aircraftCarrier.IsSpaceOcuppied(verticalPosition, horizontalPosition))
+                {
+                    return " |o";
+                }
+                else
+                {
+                    return " |~";
+                }
             }
-            else
+            catch
             {
                 return " |~";
             }
@@ -80,6 +89,8 @@ namespace BattleShip
 
         public void PlaceShips()
         {
+            DisplayToOwner();
+
             destroyer.PlaceShip();
             submarine.PlaceShip();
             battleship.PlaceShip();
