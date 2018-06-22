@@ -153,16 +153,19 @@ namespace BattleShip
 
         public void ReceiveShot(int verticalCoordinate, int horizontalCoordinate)
         {
-            foreach (Ship placedShip in placedShips)
+            if (isSpaceOccupied(verticalCoordinate, horizontalCoordinate))
             {
-                if (placedShip.IsSpaceOcuppied(verticalCoordinate,horizontalCoordinate))
+                foreach (Ship placedShip in placedShips)
                 {
-                    Console.WriteLine($"{placedShip.type} is hit!");    
+                    if (placedShip.IsSpaceOcuppied(verticalCoordinate, horizontalCoordinate))
+                    {
+                        Console.WriteLine($"{placedShip.type} is hit!");
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Your shot misses");
-                }
+            }
+            else
+            {
+                Console.WriteLine("You missed!");
             }
         }
 

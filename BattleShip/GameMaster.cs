@@ -41,6 +41,5 @@ namespace BattleShip
             player1.Shoot(player2);
             player2.Shoot(player1);
         }
-
     }
 }
