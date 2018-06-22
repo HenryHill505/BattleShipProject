@@ -19,10 +19,23 @@ namespace BattleShip
 
         public virtual void PlaceShip(int heightBoundary, int widthBoundary)
         {
+            int sternVerticalCoordinate;
+            int sternHorizontalCoordinate;
             Console.WriteLine($"Pick the x coordinate for the {type}'s stern");
-            int sternHorizontalCoordinate = int.Parse(Console.ReadLine());
+            string sternHorizontalInput = Console.ReadLine();
+            while (!int.TryParse(sternHorizontalInput, out sternHorizontalCoordinate))
+            {
+                Console.WriteLine($"Invalid input. Pick the x coordinate for the {type}'s stern");
+                sternHorizontalInput = Console.ReadLine();
+            }
+
             Console.WriteLine($"Pick the y coordinate for the {type}'s stern");
-            int sternVerticalCoordinate = int.Parse(Console.ReadLine());
+            string sternVerticalInput = Console.ReadLine();
+            while (!int.TryParse(sternVerticalInput, out sternVerticalCoordinate))
+            {
+                Console.WriteLine($"Invalid input. Pick the y coordinate for the {type}'s stern");
+                sternVerticalInput = Console.ReadLine();
+            }
 
             Console.WriteLine("Is the ship pointed up, down, left, or right");
             string shipDirection = Console.ReadLine();
