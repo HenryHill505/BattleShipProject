@@ -39,7 +39,7 @@ namespace BattleShip
             //{
             //    Console.WriteLine($"Invalid input. Pick the y coordinate for the {type}'s stern");
             //    sternVerticalInput = Console.ReadLine();
-            //}
+       
 
             sternVerticalCoordinate = hitSpaces; //FOR TESTING ONLY
             Console.WriteLine("Is the ship pointed up, down, left, or right");
