@@ -39,10 +39,22 @@ namespace BattleShip
                 {
                     if (placedShip.IsSpaceOcuppied(verticalPosition, horizontalPosition))
                     {
-                        return " |o";
+                        if (shotsTaken[verticalPosition, horizontalPosition])
+                        {
+                            return " |X";
+                        } else
+                        {
+                            return " |o";
+                        }
                     }
                 }
-                return " |~";
+                if (shotsTaken[verticalPosition, horizontalPosition])
+                {
+                    return " |.";
+                } else
+                {
+                    return " |~";
+                }                
                 if (destroyer.IsSpaceOcuppied(verticalPosition, horizontalPosition) || submarine.IsSpaceOcuppied(verticalPosition, horizontalPosition) || battleship.IsSpaceOcuppied(verticalPosition, horizontalPosition) || aircraftCarrier.IsSpaceOcuppied(verticalPosition, horizontalPosition))
                 {
                     return " |o";

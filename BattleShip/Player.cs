@@ -37,6 +37,7 @@ namespace BattleShip
             }
             catch
             {
+                Console.WriteLine("Error. Re-enter coordinates");
                 Shoot(targetPlayer);
             }
         }
