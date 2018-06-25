@@ -12,6 +12,7 @@ namespace BattleShip
         public int hitSpaces;
         public int[] verticalCoordinates;
         public int[] horizontalCoordinates;
+        public int damageTaken;
 
         public Ship()
         {
@@ -113,6 +114,11 @@ namespace BattleShip
             {
                 return false;
             }
+        }
+
+        public virtual void TakeHit(int verticalCoordinate, int horizontalCoordinate)
+        {
+            damageTaken++;
         }
     }
 }
