@@ -20,6 +20,8 @@ namespace BattleShip
         {
             try
             {
+                Console.WriteLine($"{name}'s turn to shoot");
+                Console.ReadLine();
                 targetPlayer.board.DisplayToOwner();
                 Console.WriteLine("Enter the x coordinate for your shot");
                 int horizontalCoordinate = int.Parse(Console.ReadLine());

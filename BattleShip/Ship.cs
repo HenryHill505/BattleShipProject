@@ -124,6 +124,10 @@ namespace BattleShip
         public virtual void TakeHit(int verticalCoordinate, int horizontalCoordinate)
         {
             damageTaken++;
+            if (damageTaken >= hitSpaces)
+            {
+                Console.WriteLine($"You sunk a {type}");
+            }
         }
     }
 }
