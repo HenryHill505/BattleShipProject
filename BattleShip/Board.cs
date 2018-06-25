@@ -10,7 +10,7 @@ namespace BattleShip
     {
         public int height;
         public int width;
-        public int[,] shotResults;
+        public bool[,] shotsTaken;
         public Ship[] unplacedShips;
         public List<Ship> placedShips;
         public Destroyer destroyer;
@@ -22,7 +22,7 @@ namespace BattleShip
         {
             this.height = height;
             this.width = width;
-            this.shotResults = new int[height, width];
+            this.shotsTaken = new bool[height, width];
             this.destroyer = new Destroyer();
             this.submarine = new Submarine();
             this.battleship = new Battleship();
