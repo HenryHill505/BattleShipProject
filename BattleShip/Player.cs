@@ -25,6 +25,7 @@ namespace BattleShip
             int verticalCoordinate = int.Parse(Console.ReadLine());
             if (!targetPlayer.board.shotsTaken[verticalCoordinate, horizontalCoordinate]){
                 targetPlayer.board.ReceiveShot(verticalCoordinate, horizontalCoordinate);
+                targetPlayer.board.shotsTaken[verticalCoordinate, horizontalCoordinate] = true;
             }
             else
             {

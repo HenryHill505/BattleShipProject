@@ -70,31 +70,30 @@ namespace BattleShip
                 Console.Write(" |" + i);
                 Console.WriteLine("");
             }
-            Console.ReadLine();
         }
 
         public void DisplayToOpponent()
         {
-            for (int i = 0; i < height; i++)
-            {
-                for (int j = 0; j < width; j++)
-                {
-                    switch (shotResults[i, j])
-                    {
-                        case 0:
-                            Console.Write(" ~");
-                            break;
-                        case 1:
-                            Console.Write(" x");
-                            break;
-                        case -1:
-                            Console.Write(" 0");
-                            break;
-                    }
-                }
-                Console.WriteLine("");
-            }
-            Console.ReadLine();
+            //for (int i = 0; i < height; i++)
+            //{
+            //    for (int j = 0; j < width; j++)
+            //    {
+            //        switch (shotResults[i, j])
+            //        {
+            //            case 0:
+            //                Console.Write(" ~");
+            //                break;
+            //            case 1:
+            //                Console.Write(" x");
+            //                break;
+            //            case -1:
+            //                Console.Write(" 0");
+            //                break;
+            //        }
+            //    }
+            //    Console.WriteLine("");
+            //}
+            //Console.ReadLine();
         }
 
         public void PlaceShips()
