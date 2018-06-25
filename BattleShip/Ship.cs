@@ -127,6 +127,7 @@ namespace BattleShip
             if (damageTaken >= hitSpaces)
             {
                 Console.WriteLine($"You sunk a {type}");
+                Console.ReadLine();
             }
         }
     }
