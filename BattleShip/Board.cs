@@ -114,6 +114,7 @@ namespace BattleShip
                 do
                 {
                     DisplayToOwner();
+
                     unplacedShip.PlaceShip(height, width);
  
                 } while (isShipPlacementInvalid(unplacedShip));
@@ -147,10 +148,6 @@ namespace BattleShip
                     if (placedShip.IsSpaceOcuppied(verticalCoordinate, horizontalCoordinate))
                     {
                         return true;
-                    }
-                    else
-                    {
-                        return false;
                     }
                 }
                 return false;
