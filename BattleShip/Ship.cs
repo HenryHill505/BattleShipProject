@@ -23,23 +23,28 @@ namespace BattleShip
             int sternVerticalCoordinate;
             int sternHorizontalCoordinate;
             Console.WriteLine($"Pick the x coordinate for the {type}'s stern");
-            string sternHorizontalInput = Console.ReadLine();
-            while (!int.TryParse(sternHorizontalInput, out sternHorizontalCoordinate))
-            {
-                Console.WriteLine($"Invalid input. Pick the x coordinate for the {type}'s stern");
-                sternHorizontalInput = Console.ReadLine();
-            }
+            //string sternHorizontalInput = Console.ReadLine();
+
+            //while (!int.TryParse(sternHorizontalInput, out sternHorizontalCoordinate))
+            //{
+            //    Console.WriteLine($"Invalid input. Pick the x coordinate for the {type}'s stern");
+            //    sternHorizontalInput = Console.ReadLine();
+            //}
+
+            sternHorizontalCoordinate = hitSpaces; //FOR TESTING ONLY, DELETE UPON COMPLETION
 
             Console.WriteLine($"Pick the y coordinate for the {type}'s stern");
-            string sternVerticalInput = Console.ReadLine();
-            while (!int.TryParse(sternVerticalInput, out sternVerticalCoordinate))
-            {
-                Console.WriteLine($"Invalid input. Pick the y coordinate for the {type}'s stern");
-                sternVerticalInput = Console.ReadLine();
-            }
+            //string sternVerticalInput = Console.ReadLine();
+            //while (!int.TryParse(sternVerticalInput, out sternVerticalCoordinate))
+            //{
+            //    Console.WriteLine($"Invalid input. Pick the y coordinate for the {type}'s stern");
+            //    sternVerticalInput = Console.ReadLine();
+            //}
 
+            sternVerticalCoordinate = hitSpaces; //FOR TESTING ONLY
             Console.WriteLine("Is the ship pointed up, down, left, or right");
-            string shipDirection = Console.ReadLine();
+            //string shipDirection = Console.ReadLine();
+            string shipDirection = "down"; //FOR TESTING ONLY
             switch (shipDirection)
             {
                 case "up":

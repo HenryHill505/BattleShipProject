@@ -33,12 +33,16 @@ namespace BattleShip
         {
             NamePlayers();
             SetPieces();
-            RunRound();
+            for (int i = 0; i < 10; i++)
+            {
+                RunRound();
+            }
         }
 
         public void RunRound()
         {
             player1.Shoot(player2);
+            Console.WriteLine($"{player2.name}'s turn");
             player2.Shoot(player1);
         }
     }
