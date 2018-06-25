@@ -121,7 +121,7 @@ namespace BattleShip
             }
         }
 
-        public virtual void TakeHit(int verticalCoordinate, int horizontalCoordinate)
+        public virtual void TakeHit()
         {
             damageTaken++;
             if (damageTaken >= hitSpaces)

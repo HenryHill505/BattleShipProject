@@ -31,7 +31,7 @@ namespace BattleShip
             this.placedShips = new List<Ship>();
         }
 
-        public string DecideGridCharacter(int verticalPosition, int horizontalPosition)
+        public string DecideGridCharacter(int verticalPosition, int horizontalPosition, bool DisplayShips)
         {
             try
             {   
@@ -42,9 +42,13 @@ namespace BattleShip
                         if (shotsTaken[verticalPosition, horizontalPosition])
                         {
                             return " |X";
-                        } else
+                        } else if (DisplayShips)
                         {
                             return " |o";
+                        }
+                        else
+                        {
+                            return " |~";
                         }
                     }
                 }
@@ -77,7 +81,7 @@ namespace BattleShip
             {                
                 for (int j = 0; j<width; j++)
                 {
-                    Console.Write(DecideGridCharacter(i,j));
+                    Console.Write(DecideGridCharacter(i,j,true));
                 }
                 Console.Write(" |" + i);
                 Console.WriteLine("");
@@ -86,27 +90,18 @@ namespace BattleShip
 
         public void DisplayToOpponent()
         {
-            //for (int i = 0; i < height; i++)
-            //{
-            //    for (int j = 0; j < width; j++)
-            //    {
-            //        switch (shotResults[i, j])
-            //        {
-            //            case 0:
-            //                Console.Write(" ~");
-            //                break;
-            //            case 1:
-            //                Console.Write(" x");
-            //                break;
-            //            case -1:
-            //                Console.Write(" 0");
-            //                break;
-            //        }
-            //    }
-            //    Console.WriteLine("");
-            //}
-            //Console.ReadLine();
+            WriteTopGridNumbers();
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    Console.Write(DecideGridCharacter(i, j, false));
+                }
+                Console.Write(" |" + i);
+                Console.WriteLine("");
+            }
         }
+    
 
         public void PlaceShips()
         {   
@@ -168,6 +163,7 @@ namespace BattleShip
                     if (placedShip.IsSpaceOcuppied(verticalCoordinate, horizontalCoordinate))
                     {
                         Console.WriteLine($"{placedShip.type} is hit!");
+                        placedShip.TakeHit();
                     }
                 }
             }
