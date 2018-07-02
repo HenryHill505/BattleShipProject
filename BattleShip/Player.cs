@@ -8,6 +8,7 @@ namespace BattleShip
 {
     class Player
     {
+        public bool hasLost;
         public string name;
         public Board board;
 
@@ -34,6 +35,17 @@ namespace BattleShip
                 {
                     Console.WriteLine("You have already fired at this location. Pick another set of coordinates");
                     Shoot(targetPlayer);
+                }
+                foreach (Ship ship in targetPlayer.board.placedShips)
+                {
+                    if (ship.isDestroyed)
+                    {
+                        hasLost = true;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
             }
             catch
