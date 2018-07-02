@@ -8,6 +8,7 @@ namespace BattleShip
 {
     public abstract class Ship
     {
+        public bool isDestroyed;
         public string type;
         public int hitSpaces;
         public int[] verticalCoordinates;
@@ -126,6 +127,7 @@ namespace BattleShip
             damageTaken++;
             if (damageTaken >= hitSpaces)
             {
+                isDestroyed = true;
                 Console.WriteLine($"You sunk a {type}");
                 Console.ReadLine();
             }
