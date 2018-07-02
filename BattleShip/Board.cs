@@ -76,9 +76,9 @@ namespace BattleShip
 
         public void DisplayShipsRemaining()
         {
+            Console.Write("Your Ships: ");
             foreach (Ship ship in placedShips)
             {
-                Console.Write("Your Ships: ");
                 if (!ship.isDestroyed)
                 {
                     Console.Write($"{ship.type} ");
@@ -104,6 +104,8 @@ namespace BattleShip
 
         public void DisplayToOpponent()
         {
+            DisplayShipsRemaining();
+            Console.WriteLine("");
             WriteTopGridNumbers();
             for (int i = 0; i < height; i++)
             {
