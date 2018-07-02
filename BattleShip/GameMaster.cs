@@ -41,6 +41,7 @@ namespace BattleShip
 
         public void RunRound()
         {
+            Console.WriteLine($"{player1.name}'s turn");
             player1.Shoot(player2);
             Console.WriteLine($"{player2.name}'s turn");
             player2.Shoot(player1);
