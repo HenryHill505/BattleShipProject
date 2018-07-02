@@ -74,8 +74,22 @@ namespace BattleShip
             }
         }
 
-        public void DisplayToOwner() {
+        public void DisplayShipsRemaining()
+        {
+            foreach (Ship ship in placedShips)
+            {
+                Console.Write("Your Ships: ");
+                if (!ship.isDestroyed)
+                {
+                    Console.Write($"{ship.type} ");
+                }
+                
+            }
+        }
 
+        public void DisplayToOwner() {
+            DisplayShipsRemaining();
+            Console.WriteLine("");
             WriteTopGridNumbers();
             for (int i = 0; i<height; i++)
             {                
