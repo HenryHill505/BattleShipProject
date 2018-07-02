@@ -90,7 +90,7 @@ namespace BattleShip
         public void DisplayToOwner() {
             Console.Write("Your Ships: ");
             DisplayShipsRemaining();
-
+            Console.WriteLine("Opponent's Board");
             WriteTopGridNumbers();
             for (int i = 0; i<height; i++)
             {                
@@ -108,6 +108,7 @@ namespace BattleShip
             Console.Write("Opponent's Ships: ");
             DisplayShipsRemaining();
             Console.WriteLine("");
+            Console.WriteLine("Opponent's Board");
             WriteTopGridNumbers();
             for (int i = 0; i < height; i++)
             {

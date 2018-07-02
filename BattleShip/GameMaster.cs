@@ -55,10 +55,12 @@ namespace BattleShip
         public void RunRound()
         {
             Console.WriteLine($"{player1.name}'s turn");
+            player1.board.DisplayToOwner();
             player1.Shoot(player2);
             if (!player2.hasLost)
             {
                 Console.WriteLine($"{player2.name}'s turn");
+                player2.board.DisplayToOwner();
                 player2.Shoot(player1);
             }
         }
