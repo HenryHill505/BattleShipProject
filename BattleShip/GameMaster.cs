@@ -12,6 +12,18 @@ namespace BattleShip
         Player player2 = new Player();
 
 
+        public void DisplayGameResults()
+        {
+            if (player1.hasLost)
+            {
+                Console.WriteLine($"{player2.name} has won!");
+            }
+            else if (player2.hasLost)
+            {
+                Console.WriteLine($"{player1.name} has won!");
+            }
+            Console.ReadLine();
+        }
 
         public void NamePlayers()
         {
@@ -37,15 +49,18 @@ namespace BattleShip
             {
                 RunRound();
             }
-            
+            DisplayGameResults();            
         }
 
         public void RunRound()
         {
             Console.WriteLine($"{player1.name}'s turn");
             player1.Shoot(player2);
-            Console.WriteLine($"{player2.name}'s turn");
-            player2.Shoot(player1);
+            if (!player2.hasLost)
+            {
+                Console.WriteLine($"{player2.name}'s turn");
+                player2.Shoot(player1);
+            }
         }
     }
 }
