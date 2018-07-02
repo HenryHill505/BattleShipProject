@@ -21,6 +21,8 @@ namespace BattleShip
         {
             try
             {
+                Console.Write("Your ships: ");
+                board.DisplayShipsRemaining();
                 targetPlayer.board.DisplayToOpponent();
                 Console.WriteLine("Enter the x coordinate for your shot");
                 int horizontalCoordinate = int.Parse(Console.ReadLine());

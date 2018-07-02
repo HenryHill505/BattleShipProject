@@ -84,12 +84,13 @@ namespace BattleShip
                     Console.Write($"{ship.type} ");
                 }
             }
+            Console.WriteLine("");
         }
 
         public void DisplayToOwner() {
             Console.Write("Your Ships: ");
             DisplayShipsRemaining();
-            Console.WriteLine("");
+
             WriteTopGridNumbers();
             for (int i = 0; i<height; i++)
             {                
