@@ -11,7 +11,7 @@ namespace BattleShip
         public bool hasLost;
         public string name;
         public Board board;
-
+         
         public Player()
         {
             this.board = new Board(20,20);
@@ -44,6 +44,7 @@ namespace BattleShip
                     }
                     else
                     {
+                        hasLost = false;
                         break;
                     }
                 }

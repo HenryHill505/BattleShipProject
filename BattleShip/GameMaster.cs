@@ -33,10 +33,11 @@ namespace BattleShip
         {
             NamePlayers();
             SetPieces();
-            for (int i = 0; i < 10; i++)
+            while (!player1.hasLost && !player2.hasLost)
             {
                 RunRound();
             }
+            
         }
 
         public void RunRound()
