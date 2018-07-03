@@ -42,11 +42,11 @@ namespace BattleShip
                 {
                     if (ship.isDestroyed)
                     {
-                        hasLost = true;
+                        targetPlayer.hasLost = true;
                     }
                     else
                     {
-                        hasLost = false;
+                        targetPlayer.hasLost = false;
                         break;
                     }
                 }
