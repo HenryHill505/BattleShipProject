@@ -58,6 +58,7 @@ namespace BattleShip
             player1.board.DisplayToOwner();
             UI.PauseClear();
             player1.Shoot(player2);
+            UI.PauseClear();
             if (!player2.hasLost)
             {
                 UI.ClearPause($"{player2.name}'s turn");
