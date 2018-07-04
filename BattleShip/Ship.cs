@@ -130,7 +130,6 @@ namespace BattleShip
             {
                 isDestroyed = true;
                 Console.WriteLine($"You sunk a {type}");
-                Console.ReadLine();
             }
         }
     }

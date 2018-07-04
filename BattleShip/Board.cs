@@ -190,6 +190,7 @@ namespace BattleShip
             {
                 Console.WriteLine("You missed!");
             }
+            Console.ReadLine();
         }
 
         public void WriteTopGridNumbers()
