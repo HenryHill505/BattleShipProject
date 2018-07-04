@@ -25,9 +25,9 @@ namespace BattleShip
                 board.DisplayShipsRemaining();
                 targetPlayer.board.DisplayToOpponent();
                 Console.WriteLine("Enter the x coordinate for your shot");
-                int horizontalCoordinate = int.Parse(Console.ReadLine());
+                int horizontalCoordinate = int.Parse(Console.ReadLine())-1;
                 Console.WriteLine("Enter the y coordinate for your shot");
-                int verticalCoordinate = int.Parse(Console.ReadLine());
+                int verticalCoordinate = int.Parse(Console.ReadLine())-1;
                 if (!targetPlayer.board.shotsTaken[verticalCoordinate, horizontalCoordinate])
                 {
                     targetPlayer.board.ReceiveShot(verticalCoordinate, horizontalCoordinate);

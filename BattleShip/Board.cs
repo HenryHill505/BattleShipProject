@@ -98,7 +98,7 @@ namespace BattleShip
                 {
                     Console.Write(DecideGridCharacter(i,j,true));
                 }
-                Console.Write(" |" + i);
+                Console.Write($" | {i+1}");
                 Console.WriteLine("");
             }
         }
@@ -116,7 +116,7 @@ namespace BattleShip
                 {
                     Console.Write(DecideGridCharacter(i, j, false));
                 }
-                Console.Write(" |" + i);
+                Console.Write($" | {i+1}");
                 Console.WriteLine("");
             }
         }
@@ -195,11 +195,11 @@ namespace BattleShip
 
         public void WriteTopGridNumbers()
         {
-            for (int i = 0; i < 11; i++)
+            for (int i = 1; i < 11; i++)
             {
                 Console.Write(" |" + i);
             }
-            for (int i = 11; i < width; i++)
+            for (int i = 11; i <= width; i++)
             {
                 Console.Write("|" + i);
             }

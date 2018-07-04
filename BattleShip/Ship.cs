@@ -31,8 +31,9 @@ namespace BattleShip
                 Console.WriteLine($"Invalid input. Pick the x coordinate for the {type}'s stern");
                 sternHorizontalInput = Console.ReadLine();
             }
+            sternHorizontalCoordinate--;
 
-            
+
 
             Console.WriteLine($"Pick the y coordinate for the {type}'s stern");
             string sternVerticalInput = Console.ReadLine();
@@ -41,8 +42,9 @@ namespace BattleShip
                 Console.WriteLine($"Invalid input. Pick the y coordinate for the {type}'s stern");
                 sternVerticalInput = Console.ReadLine();
             }
+            sternVerticalCoordinate--;
 
-                
+
             Console.WriteLine("Is the ship pointed up, down, left, or right");
             string shipDirection = Console.ReadLine();
             
