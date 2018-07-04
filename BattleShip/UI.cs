@@ -15,5 +15,11 @@ namespace BattleShip
             Console.ReadLine();
             Console.Clear();
         }
+
+        public static void PauseClear()
+        {
+            Console.ReadLine();
+            Console.Clear();
+        }
     }
 }
