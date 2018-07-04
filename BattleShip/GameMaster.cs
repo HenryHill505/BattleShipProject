@@ -65,6 +65,7 @@ namespace BattleShip
                 player2.board.DisplayToOwner();
                 UI.PauseClear();
                 player2.Shoot(player1);
+                UI.PauseClear();
             }
         }
     }

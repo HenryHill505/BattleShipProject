@@ -189,8 +189,8 @@ namespace BattleShip
             else
             {
                 Console.WriteLine("You missed!");
+                Console.ReadLine();
             }
-            Console.ReadLine();
         }
 
         public void WriteTopGridNumbers()
