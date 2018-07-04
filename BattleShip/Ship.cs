@@ -96,6 +96,7 @@ namespace BattleShip
                 {
                     Console.WriteLine($"{type} is out of bounds. Place again: ");
                     PlaceShip(heightBoundary, widthBoundary);
+                    break;
                 }
                     
             }
@@ -106,6 +107,7 @@ namespace BattleShip
                 {
                     Console.WriteLine($"{type} is out of bounds. Place again: ");
                     PlaceShip(heightBoundary, widthBoundary);
+                    break;
                 }
             }
             Console.ReadLine();
