@@ -110,7 +110,6 @@ namespace BattleShip
                     break;
                 }
             }
-            Console.ReadLine();
         }
 
         public virtual bool IsSpaceOcuppied(int verticalCoordinate, int horizontalCoordinate)

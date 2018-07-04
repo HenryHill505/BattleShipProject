@@ -35,9 +35,9 @@ namespace BattleShip
 
         public void SetPieces()
         {
-            Console.WriteLine($"{player1.name}, set your pieces");
+            UI.ClearPause($"{player1.name}'s turn to place ships");
             player1.board.PlaceShips();
-            Console.WriteLine($"{player2.name}, set your pieces");
+            UI.ClearPause($"{player2.name}'s turn to place ships");
             player2.board.PlaceShips();
         }
 
