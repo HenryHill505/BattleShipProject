@@ -189,7 +189,7 @@ namespace BattleShip
             else
             {
                 Console.WriteLine("You missed!");
-                Console.ReadLine();
+                
             }
         }
 
