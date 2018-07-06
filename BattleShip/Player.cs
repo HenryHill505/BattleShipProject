@@ -35,7 +35,7 @@ namespace BattleShip
                 }
                 else
                 {
-                    Console.WriteLine("You have already fired at this location. Pick another set of coordinates");
+                    UI.ClearPause("You have already fired at this location. Pick another set of coordinates");
                     Shoot(targetPlayer);
                 }
                 foreach (Ship ship in targetPlayer.board.placedShips)
