@@ -33,8 +33,6 @@ namespace BattleShip
             }
             sternHorizontalCoordinate--;
 
-
-
             Console.WriteLine($"Pick the y coordinate for the {type}'s stern");
             string sternVerticalInput = Console.ReadLine();
             while (!int.TryParse(sternVerticalInput, out sternVerticalCoordinate))
@@ -43,7 +41,6 @@ namespace BattleShip
                 sternVerticalInput = Console.ReadLine();
             }
             sternVerticalCoordinate--;
-
 
             Console.WriteLine("Is the ship pointed up, down, left, or right");
             string shipDirection = Console.ReadLine();
@@ -100,7 +97,6 @@ namespace BattleShip
                     PlaceShip(heightBoundary, widthBoundary);
                     break;
                 }
-                    
             }
 
             foreach (int coordinate in horizontalCoordinates)

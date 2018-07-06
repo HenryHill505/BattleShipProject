@@ -11,7 +11,6 @@ namespace BattleShip
         Player player1 = new Player();
         Player player2 = new Player();
 
-
         public void DisplayGameResults()
         {
             if (player1.hasLost)

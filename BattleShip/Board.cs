@@ -157,7 +157,6 @@ namespace BattleShip
                 }
                 return false;
             }
-
             catch
             {
                 return false;
@@ -180,7 +179,6 @@ namespace BattleShip
             else
             {
                 Console.WriteLine("You missed!");
-                
             }
         }
 
@@ -195,7 +193,6 @@ namespace BattleShip
                 Console.Write("|" + i);
             }
             Console.WriteLine(" ");
-
         }
     }
 }
