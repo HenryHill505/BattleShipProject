@@ -134,7 +134,6 @@ namespace BattleShip
             {
                 for (int j = 0; j < ship.horizontalCoordinates.Count(); j++)
                 {
-                    //Console.WriteLine("That space is already occupied");
                     if (isSpaceOccupied(ship.verticalCoordinates[i], ship.horizontalCoordinates[j]))
                     {
                         UI.ClearPause($"That space is already occupied. Pick another space for the {ship.type}");
