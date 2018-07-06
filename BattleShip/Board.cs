@@ -129,7 +129,7 @@ namespace BattleShip
                 {
                     DisplayToOwner();
 
-                    unplacedShip.PlaceShip(height, width);
+                    unplacedShip.PlaceShip(height-1, width-1);
  
                 } while (isShipPlacementInvalid(unplacedShip));
                 placedShips.Add(unplacedShip);
